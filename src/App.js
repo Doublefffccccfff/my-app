@@ -13,7 +13,8 @@ const Pagination = () => {
       );
       setData(response.data);
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.log("error while fetching data", error);
+      alert("failed to fetch data");
     }
   };
 
@@ -59,7 +60,7 @@ const Pagination = () => {
           Previous
         </button>
 
-        <span style={{ fontWeight: "bold", fontSize: "16px" }}>{currentPage}</span>
+        <p style={{ fontWeight: "bold", fontSize: "16px" }}>{currentPage}</p>
 
         <button
           onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
